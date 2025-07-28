@@ -1,73 +1,25 @@
-<?php
-require_once __DIR__ . '/config/db.php';
-require_once __DIR__ . '/config/song_scan.php';
-
-
-
-$stmt = $pdo->query("SELECT * FROM songs ORDER BY date_added DESC");
-$songs = $stmt->fetchALL(PDO::FETCH_ASSOC);
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LofiBox</title>
-    <link rel="stylesheet" href="Assets/style.css">
+    <title>Document</title>
 </head>
-
-
 <body>
-    
-<div class="m-wrapper">
+    <h1>LofiBox Home Page</h1>
 
 
-    <div class="heading">
-
-        <div class="head1">
-            <h1>Your LofiBox</h1>
-        </div>
-
+    <div class="1-wrapper">
+        <p>This is a solo project, Made to store Lo-Fi tracks that you enjoy.</p>
     </div>
 
-    <div class="s-wrapper">
-
-        <div class="song-container">
-
-            <div class="head">
-                <h2>Yours Songs</h2>
-            </div>
-            
-
-            <ul>
-                <?php foreach ($songs as $song): ?>
-                    <li class="songs">
-                        <?php
-                        $cover = $song['cover'] ? 'covers/' .htmlspecialchars($song['cover']) : 'covers/default.jpg';
-                        $audio = 'Songs/' . htmlspecialchars($song['filename']);
-                        ?>
-                        <img id ="cover" src="<?= $cover?>" alt="" style="width:100px;">
-                        <h2 id="title"><?= htmlspecialchars($song['title']) ?></h2>
-                        <audio controls id="audio">
-                            <source src="<?= $audio ?>" type="audio/mpeg" />
-                            Your browser does not support the audio element.
-                        </audio>
-                    </li> 
-                <?php endforeach; ?> 
-            </ul>
-
-
+    <div class="2-wrapper">
+        <div class="bttn-nav">
+            <a href="login.php">Log In</a>
+            <a href="register.php">Register Account</a>
         </div>
-
     </div>
-    
-
-
-</div>
-
     
 </body>
 </html>
