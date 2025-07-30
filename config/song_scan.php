@@ -1,4 +1,4 @@
-<?php
+<!--
 
 $musicDir = __DIR__ . '/../Songs';
 $coverDir = __DIR__ . '/../covers';
@@ -35,6 +35,10 @@ foreach($files as $file) {
     $insert = $pdo->prepare("INSERT INTO songs (filename, title, artist, duration, cover) VALUES (?,?,?,?,?) ");
     $insert->execute([$filename,$title, $artists, $duration, $cover]);
 }
+
+
+
+-->
 
 
 ?>

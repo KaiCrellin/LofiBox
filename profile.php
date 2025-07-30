@@ -52,5 +52,17 @@ try {
     <h1>Welcome to your proflie <?= htmlspecialchars($user['username']) ?></h1>
     <p>Your Email: <?= htmlspecialchars($user['email'])?></p>
     <a href="logout.php">Logout</a>
+
+
+
+
+<!--
+Add a Section to display User songs.
+Users must have a relationship with songs through id.
+Allowing us to join the tables and match users to songs to display
+song they have uploaded. (FURTHER) --- Allows for favouriting 
+features
+
+-->
 </body>
 </html>
